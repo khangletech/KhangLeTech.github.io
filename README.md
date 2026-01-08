@@ -7,6 +7,37 @@
   <meta name="description" content="Cybersecurity student portfolio: SOC/Blue Team, Networking, IT Technician. Projects in AD attack simulation, AWS IoT monitoring, penetration testing, and secure network design." />
 
   <style>
+    /* === Certifications === */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.cert {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(15,23,51,.45), rgba(12,19,43,.25));
+}
+
+.cert h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.cert p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .certs {
+    grid-template-columns: 1fr;
+  }
+}
+
     :root{
       --bg:#0b1020;
       --panel:#0f1733;
@@ -453,6 +484,38 @@
         </div>
       </div>
     </section>
+
+    <!-- CERTIFICATIONS -->
+<section class="section" id="certifications">
+  <h2>Certifications</h2>
+
+  <div class="certs">
+    <div class="cert">
+      <h3>CompTIA A+</h3>
+      <p>
+        Core IT support certification covering hardware, operating systems,
+        troubleshooting, and end-user support.
+      </p>
+    </div>
+
+    <div class="cert">
+      <h3>CompTIA Network+</h3>
+      <p>
+        Networking fundamentals including TCP/IP, DNS, DHCP, routing,
+        switching, and network troubleshooting.
+      </p>
+    </div>
+
+    <div class="cert">
+      <h3>CompTIA Security+ (In Progress)</h3>
+      <p>
+        Foundational cybersecurity certification covering threats, risk
+        management, security operations, and incident response concepts.
+      </p>
+    </div>
+  </div>
+</section>
+
 
     <!-- CONTACT -->
     <section class="section" id="contact">
