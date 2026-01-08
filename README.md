@@ -307,3 +307,182 @@
         </div>
       </div>
     </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="grid3">
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:15px">Cybersecurity</h3>
+          <ul class="muted">
+            <li>Recon & enumeration (Nmap, web enumeration)</li>
+            <li>Vulnerability assessment (OpenVAS/Greenbone)</li>
+            <li>AD lab concepts: lateral movement, credential risks, hardening</li>
+            <li>Monitoring/detection: Suricata alerts, dashboards (ELK/Kibana)</li>
+            <li>Reporting: severity, likelihood, remediation recommendations</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:15px">Networking</h3>
+          <ul class="muted">
+            <li>TCP/IP, DNS, DHCP fundamentals</li>
+            <li>Network design in Packet Tracer</li>
+            <li>ACLs, port security, SSH remote management</li>
+            <li>Troubleshooting routers/extenders and connectivity issues</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:15px">Systems / IT</h3>
+          <ul class="muted">
+            <li>Windows 10/11, macOS, iOS/Android</li>
+            <li>Microsoft 365, Teams/Zoom support</li>
+            <li>Active Directory exposure (accounts, troubleshooting)</li>
+            <li>Ticketing/workflows: Jira, Remedy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+
+      <div class="grid2">
+        <article class="proj">
+          <h3>Active Directory Attack Simulation + Remediation Plan</h3>
+          <div class="meta">
+            <span>AD Lab</span><span>•</span><span>Kali + Windows Server</span><span>•</span><span>Recon → Lateral Movement</span>
+          </div>
+          <p>
+            Simulated a full attack lifecycle in an isolated domain environment and documented remediation recommendations
+            (patching, segmentation, credential hygiene, access restrictions).
+          </p>
+          <div class="tags">
+            <span class="tag">Nmap</span><span class="tag">OpenVAS</span><span class="tag">Metasploit</span><span class="tag">Impacket</span><span class="tag">AD</span>
+          </div>
+          <div class="actions">
+            <a class="pill" href="https://github.com/YOUR_GITHUB/ad-attack-lab" target="_blank" rel="noreferrer">Repo ↗</a>
+            <a class="pill" href="#" title="Optional: link to sanitized PDF in repo">Report (PDF)</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <h3>AWS IoT Temperature Monitoring + Security Detection</h3>
+          <div class="meta">
+            <span>Cloud/IoT</span><span>•</span><span>Raspberry Pi</span><span>•</span><span>Suricata + ELK</span>
+          </div>
+          <p>
+            Built an IoT pipeline sending data to AWS IoT Core over TLS, mirrored MQTT to EC2, detected simulated attacks
+            using Suricata rules + Kibana dashboards, and validated activity via VPC Flow Logs stored in S3.
+          </p>
+          <div class="tags">
+            <span class="tag">AWS IoT</span><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">Suricata</span><span class="tag">Kibana</span><span class="tag">VPC Logs</span>
+          </div>
+          <div class="actions">
+            <a class="pill" href="https://github.com/YOUR_GITHUB/aws-iot-security-monitoring" target="_blank" rel="noreferrer">Repo ↗</a>
+            <a class="pill" href="#" title="Optional: link to sanitized PDF in repo">Report (PDF)</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <h3>Penetration Testing Report (Metasploitable2)</h3>
+          <div class="meta">
+            <span>Pen Testing</span><span>•</span><span>Web + Network</span><span>•</span><span>Risk Rating + Mitigation</span>
+          </div>
+          <p>
+            Conducted scanning, validated vulnerabilities, and produced a professional report with impact, likelihood,
+            severity, and recommendations.
+          </p>
+          <div class="tags">
+            <span class="tag">Nmap</span><span class="tag">Metasploit</span><span class="tag">Web Vulns</span><span class="tag">Reporting</span>
+          </div>
+          <div class="actions">
+            <a class="pill" href="https://github.com/YOUR_GITHUB/pentest-reports" target="_blank" rel="noreferrer">Repo ↗</a>
+            <a class="pill" href="#" title="Optional: link to sanitized PDF in repo">Report (PDF)</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <h3>Secure Dual-LAN Network Design (Packet Tracer)</h3>
+          <div class="meta">
+            <span>Networking</span><span>•</span><span>ACLs + Port Security</span><span>•</span><span>DNS + HTTPS + SSH</span>
+          </div>
+          <p>
+            Designed a dual-LAN topology with router + switches, configured static IPs, DNS + web services, enforced port security,
+            and implemented ACL rules to restrict access and secure remote management.
+          </p>
+          <div class="tags">
+            <span class="tag">Cisco</span><span class="tag">ACL</span><span class="tag">Port Security</span><span class="tag">DNS</span><span class="tag">SSH</span>
+          </div>
+          <div class="actions">
+            <a class="pill" href="https://github.com/YOUR_GITHUB/network-design-labs" target="_blank" rel="noreferrer">Repo ↗</a>
+            <a class="pill" href="#" title="Optional: add diagram/screenshots in repo">Diagram</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="muted" style="margin-top:12px">
+        Note: Keep public repos sanitized (no credentials, no active payloads). We can publish safe “case studies” + diagrams.
+      </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <h2>Experience</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:15px">IT Client Services Technician — George Brown College</h3>
+          <p class="muted" style="margin:0">
+            Support across Windows/macOS/mobile, device deployment, ticket workflows, and classroom/lab AV troubleshooting.
+          </p>
+          <div class="tags">
+            <span class="tag">Windows/macOS</span><span class="tag">M365</span><span class="tag">AD</span><span class="tag">Jira</span><span class="tag">Remedy</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:15px">Technology Consultant — Best Buy Canada</h3>
+          <p class="muted" style="margin:0">
+            Home networking setup and troubleshooting (routers, extenders, smart devices) plus hardware/software support.
+          </p>
+          <div class="tags">
+            <span class="tag">Networking</span><span class="tag">Troubleshooting</span><span class="tag">Customer-facing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p class="muted" style="margin:0 0 10px">
+          Open to co-op roles in SOC/Blue Team, NOC/Network Tech, and IT Technician positions.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:khangle.tech@gmail.com">khangle.tech@gmail.com</a>
+          <a class="btn" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+        <p class="muted" style="margin:12px 0 0">
+          <span class="kbd">Last updated</span> <span id="lastUpdated"></span>
+        </p>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>© <span id="year"></span> Khang Le</span>
+      <span class="muted">Single-file HTML portfolio • Hosted on GitHub Pages</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const d = new Date();
+    document.getElementById("lastUpdated").textContent =
+      d.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
+  </script>
+</body>
+</html>
