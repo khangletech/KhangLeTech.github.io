@@ -3,505 +3,307 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio page" />
-  <title>Khang Le | Portfolio</title>
+  <title>Khang Le | Cybersecurity • Networking • IT Technician</title>
+  <meta name="description" content="Cybersecurity student portfolio: SOC/Blue Team, Networking, IT Technician. Projects in AD attack simulation, AWS IoT monitoring, penetration testing, and secure network design." />
 
   <style>
     :root{
-      --bg: #0b0f17;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.09);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.68);
-      --border: rgba(255,255,255,.12);
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-      --accent: #6ee7ff;
-      --accent2:#a78bfa;
-      --chip: rgba(110,231,255,.12);
-      --focus: 0 0 0 4px rgba(110,231,255,.18);
-      --radius: 18px;
-      --max: 1050px;
+      --bg:#0b1020;
+      --panel:#0f1733;
+      --panel2:#0c132b;
+      --text:#e7ecff;
+      --muted:#b9c2e6;
+      --line:rgba(231,236,255,.12);
+      --accent:#7aa2ff;
+      --accent2:#7df0d6;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1080px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
-
-    /* Light mode tokens (toggled by JS) */
-    [data-theme="light"]{
-      --bg: #f7f7fb;
-      --panel: rgba(0,0,0,.04);
-      --panel2: rgba(0,0,0,.06);
-      --text: rgba(0,0,0,.86);
-      --muted: rgba(0,0,0,.58);
-      --border: rgba(0,0,0,.10);
-      --shadow: 0 20px 60px rgba(0,0,0,.10);
-      --chip: rgba(10,88,202,.10);
-    }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 700px at 20% 10%, rgba(110,231,255,.18), transparent 55%),
-                  radial-gradient(900px 600px at 90% 15%, rgba(167,139,250,.20), transparent 60%),
-                  radial-gradient(900px 600px at 55% 95%, rgba(110,231,255,.10), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      overflow-x:hidden;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 10% -10%, rgba(122,162,255,.25), transparent 60%),
+        radial-gradient(700px 500px at 90% 0%, rgba(125,240,214,.18), transparent 55%),
+        radial-gradient(900px 700px at 50% 120%, rgba(122,162,255,.12), transparent 60%),
+        var(--bg);
+      line-height:1.55;
     }
-
-    a{color:inherit; text-decoration:none}
-    a:hover{opacity:.92}
-    .wrap{max-width: var(--max); margin:0 auto; padding: 24px}
-
-    /* Top nav */
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 60px}
     .nav{
-      position: sticky; top:0; z-index: 50;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(to bottom, rgba(0,0,0,.22), transparent);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,16,32,.85), rgba(11,16,32,.45));
+      border-bottom:1px solid var(--line);
     }
-    [data-theme="light"] .nav{
-      background: linear-gradient(to bottom, rgba(255,255,255,.65), transparent);
-      border-bottom: 1px solid rgba(0,0,0,.06);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px;
-      max-width: var(--max);
-      margin:0 auto;
-      padding: 14px 24px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 700;
-      letter-spacing: .2px;
-    }
+    .nav .inner{max-width:var(--max); margin:0 auto; display:flex; gap:14px; align-items:center; justify-content:space-between; padding:14px 18px}
+    .brand{display:flex; gap:10px; align-items:center; text-decoration:none}
     .dot{
-      width:11px; height:11px; border-radius:999px;
+      width:12px; height:12px; border-radius:50%;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px rgba(110,231,255,.12);
+      box-shadow:0 0 0 6px rgba(122,162,255,.12);
     }
-    .nav-links{
-      display:flex; align-items:center; gap: 14px;
-      font-size: 14px;
-      color: var(--muted);
+    .brand b{letter-spacing:.2px}
+    .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      text-decoration:none;
+      font-size:14px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(15,23,51,.35);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
     }
-    .nav-links a{padding:8px 10px; border-radius: 999px}
-    .nav-links a:hover{background: var(--panel)}
-    .nav-actions{display:flex; gap:10px; align-items:center}
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--panel);
-      color: var(--text);
-      box-shadow: none;
-      cursor:pointer;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .btn:hover{background: var(--panel2)}
-    .btn:focus{outline:none; box-shadow: var(--focus)}
-    .btn.primary{
-      border: 1px solid rgba(110,231,255,.35);
-      background: linear-gradient(135deg, rgba(110,231,255,.14), rgba(167,139,250,.14));
-    }
-
-    /* Hero */
-    .hero{padding: 38px 0 8px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns: 1fr}
-      .nav-links{display:none}
-    }
-
-    .card{
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: var(--radius);
+    .pill:hover{transform: translateY(-1px); border-color: rgba(122,162,255,.45); background: rgba(15,23,51,.55)}
+    .hero{
+      margin-top:22px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(15,23,51,.72), rgba(12,19,43,.52));
+      border-radius:var(--radius);
+      padding:26px;
       box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
     }
-    [data-theme="light"] .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.8));
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(400px 200px at 10% 20%, rgba(122,162,255,.22), transparent 55%),
+                  radial-gradient(420px 220px at 85% 25%, rgba(125,240,214,.14), transparent 60%);
+      pointer-events:none;
+    }
+    .hero .grid{display:grid; grid-template-columns: 1.35fr .65fr; gap:18px; position:relative}
+
+    /* === PHOTO AREA (Put your image at /assets/profile.jpg) === */
+    .profile{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-bottom: 10px;
+    }
+    .avatar{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      object-fit:cover;
+      border: 2px solid rgba(122,162,255,.5);
+      box-shadow: 0 0 0 6px rgba(122,162,255,.15);
+      background: rgba(15,23,51,.5);
     }
 
-    .hero-main{padding: 22px 22px 18px}
-    .eyebrow{
-      display:inline-flex; align-items:center; gap:10px;
-      font-size: 13px; color: var(--muted);
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--panel);
-      width: fit-content;
-    }
-    .h1{
-      margin: 14px 0 8px;
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.05;
-      letter-spacing: -0.7px;
-    }
-    .lead{
-      margin: 0 0 16px;
+    h1{margin:0 0 6px; font-size:34px; letter-spacing:.2px}
+    .sub{margin:0; color:var(--muted)}
+    .badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px}
+    .badge{
+      font-family:var(--mono);
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(12,19,43,.35);
       color: var(--muted);
-      max-width: 62ch;
-      font-size: 16px;
-      line-height: 1.6;
     }
-    .hero-cta{display:flex; gap:10px; flex-wrap: wrap}
-
-    /* Side panel */
-    .hero-side{padding: 18px}
-    .stat{
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: var(--panel);
-      margin-bottom: 12px;
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .btn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(15,23,51,.45);
+      transition: transform .15s ease, border-color .15s ease;
+      font-weight:600;
     }
-    .stat h3{margin:0 0 6px; font-size: 14px}
-    .stat p{margin:0; color: var(--muted); font-size: 14px; line-height:1.5}
-
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px}
-    .chip{
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--chip);
-      font-size: 12.5px;
-      color: var(--text);
+    .btn:hover{transform: translateY(-1px); border-color: rgba(125,240,214,.5)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(122,162,255,.22), rgba(125,240,214,.14));
+      border-color: rgba(122,162,255,.45);
     }
-
-    /* Sections */
-    section{padding: 22px 0}
-    .section-title{
-      display:flex; align-items:end; justify-content:space-between;
-      gap: 14px;
-      margin-bottom: 12px;
+    .card{
+      border:1px solid var(--line);
+      background: rgba(15,23,51,.35);
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow: 0 8px 22px rgba(0,0,0,.22);
+      position:relative;
     }
-    .section-title h2{
-      margin:0;
-      font-size: 18px;
-      letter-spacing: -.2px;
-    }
-    .section-title p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 980px){ .grid{grid-template-columns: repeat(2, 1fr);} }
-    @media (max-width: 620px){ .grid{grid-template-columns: 1fr;} }
-
-    .project{
-      padding: 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--panel);
-      transition: transform .15s ease, background .15s ease;
-      display:flex; flex-direction:column; gap: 10px;
-      min-height: 170px;
-    }
-    .project:hover{transform: translateY(-2px); background: var(--panel2)}
-    .project h3{margin:0; font-size: 15px}
-    .project p{margin:0; color: var(--muted); font-size: 14px; line-height:1.55}
-    .project .meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto}
+    .stat{display:grid; gap:8px}
+    .stat .k{font-size:12px; color:var(--muted); font-family:var(--mono)}
+    .stat .v{font-size:16px; font-weight:700}
+    .section{margin-top:22px}
+    .section h2{margin:0 0 10px; font-size:18px; letter-spacing:.2px}
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0; padding-left:18px}
+    li{margin:6px 0}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
     .tag{
-      font-size: 12px;
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
+      font-size:12px;
+      padding:6px 9px;
+      border-radius:999px;
+      border:1px solid var(--line);
       color: var(--muted);
-      background: rgba(255,255,255,.03);
+      background: rgba(12,19,43,.25);
+      font-family:var(--mono);
     }
-    [data-theme="light"] .tag{background: rgba(0,0,0,.03);}
-
-    /* Footer */
-    footer{
-      padding: 26px 0 34px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align:center;
+    .proj{
+      display:grid; gap:10px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+      background: linear-gradient(180deg, rgba(15,23,51,.45), rgba(12,19,43,.25));
+    }
+    .proj h3{margin:0; font-size:16px}
+    .proj p{margin:0; color:var(--muted)}
+    .proj .meta{display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-family:var(--mono); font-size:12px}
+    .proj .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:4px}
+    .proj .actions a{font-size:13px}
+    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .foot{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size:14px;
+    }
+    .kbd{
+      font-family:var(--mono);
+      padding:2px 8px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(15,23,51,.25);
+      color:var(--muted);
+      font-size:12px;
     }
 
-    /* Smooth anchor offset for sticky nav */
-    [id]{scroll-margin-top: 90px;}
+    @media (max-width: 900px){
+      .hero .grid{grid-template-columns: 1fr}
+      .grid3{grid-template-columns: 1fr}
+      .grid2, .split{grid-template-columns: 1fr}
 
-    /* Small helper */
-    .muted{color: var(--muted)}
+      /* Photo stacks nicely on mobile */
+      .profile{flex-direction:column; text-align:center}
+    }
   </style>
 </head>
 
 <body>
   <div class="nav">
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="dot" aria-hidden="true"></div>
-        <span>Khang Le</span>
-      </div>
-
-      <div class="nav-links" role="navigation" aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div class="nav-actions">
-        <button class="btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙 Theme</button>
-        <a class="btn primary" href="#contact">Get in touch</a>
+    <div class="inner">
+      <a class="brand" href="#top">
+        <span class="dot" aria-hidden="true"></span>
+        <b>Khang Le</b>
+      </a>
+      <div class="links">
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#skills">Skills</a>
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#experience">Experience</a>
+        <a class="pill" href="#contact">Contact</a>
       </div>
     </div>
   </div>
 
-  <main class="wrap">
+  <main class="wrap" id="top">
     <!-- HERO -->
-    <div class="hero">
-      <div class="hero-grid">
-        <div class="card hero-main">
-          <div class="eyebrow">IT Support • Networking • Troubleshooting</div>
-          <h1 class="h1">Portfolio & Projects</h1>
-          <p class="lead">
-            Hi — I’m <strong>Khang Le</strong>. I build practical IT + networking projects and document them clearly.
-            Below are highlights from school and hands-on work.
-          </p>
+    <section class="hero">
+      <div class="grid">
+        <div>
+          <!-- PHOTO AREA: Put your image at assets/profile.jpg -->
+          <div class="profile">
+            <img class="avatar" src="./assets/profile.jpg" alt="Khang Le profile photo" />
+            <div>
+              <h1>Cybersecurity • Networking • IT Technician</h1>
+              <p class="sub">
+                Seneca Cybersecurity student (GPA 3.9). Targeting SOC/Blue Team, NOC/Network Tech, and IT Technician roles.
+                Building skills in cloud security, pentesting labs, and infrastructure.
+              </p>
 
-          <div class="hero-cta">
-            <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn" href="#" title="Upload your resume PDF and link it here">Resume (PDF)</a>
+              <div class="badges">
+                <span class="badge">Seneca CYT (Sep 2025 → Apr 2026)</span>
+                <span class="badge">GPA 3.9</span>
+                <span class="badge">CompTIA A+</span>
+                <span class="badge">CompTIA Network+</span>
+                <span class="badge">Security+ (In Progress)</span>
+                <span class="badge">Toronto, ON</span>
+              </div>
+
+              <div class="cta">
+                <!-- Replace these links -->
+                <a class="btn primary" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer">GitHub ↗</a>
+                <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                <a class="btn" href="mailto:khangle.tech@gmail.com">Email</a>
+                <!-- Optional: add resume.pdf to repo root -->
+                <a class="btn" href="./resume.pdf">Resume (PDF)</a>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="card hero-side">
-          <div class="stat">
-            <h3>Quick info</h3>
-            <p><strong>Location:</strong> Toronto, Canada</p>
-            <p><strong>Focus:</strong> Help Desk • Networking • Customer support</p>
-          </div>
-
-          <div class="stat">
-            <h3>Certifications</h3>
-            <p>CompTIA A+</p>
-            <p>CompTIA Network+</p>
-          </div>
-
-          <div class="stat">
-            <h3>Tech I use</h3>
-            <div class="chips">
-              <span class="chip">Windows</span>
-              <span class="chip">Linux</span>
-              <span class="chip">TCP/IP</span>
-              <span class="chip">DNS/DHCP</span>
-              <span class="chip">Wireshark</span>
-              <span class="chip">PowerShell</span>
+          <div class="section">
+            <h2>Target Roles</h2>
+            <div class="tags">
+              <span class="tag">SOC / Blue Team</span>
+              <span class="tag">NOC / Network Tech</span>
+              <span class="tag">IT Technician</span>
+              <span class="tag">Cloud Security</span>
+              <span class="tag">Pentesting</span>
+              <span class="tag">Infrastructure / Servers</span>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-title">
-        <div>
-          <h2>Featured Projects</h2>
-          <p>Replace these with your real school projects + repo links.</p>
-        </div>
-        <p class="muted">Tip: keep each description 1–2 lines</p>
-      </div>
-
-      <div class="grid">
-        <a class="project" href="#" target="_blank" rel="noreferrer">
-          <h3>Active Directory Lab (School)</h3>
-          <p>Built a small Windows Server domain, created users/groups, and applied GPOs for policy enforcement.</p>
-          <div class="meta">
-            <span class="tag">Windows Server</span>
-            <span class="tag">AD DS</span>
-            <span class="tag">GPO</span>
-          </div>
-        </a>
-
-        <a class="project" href="#" target="_blank" rel="noreferrer">
-          <h3>Network Troubleshooting Pack</h3>
-          <p>Packet captures + notes diagnosing DNS issues, latency, and connectivity using repeatable steps.</p>
-          <div class="meta">
-            <span class="tag">Wireshark</span>
-            <span class="tag">DNS</span>
-            <span class="tag">TCP/IP</span>
-          </div>
-        </a>
-
-        <a class="project" href="#" target="_blank" rel="noreferrer">
-          <h3>Automation Script</h3>
-          <p>PowerShell script to collect system info, export logs, and generate a support-friendly report.</p>
-          <div class="meta">
-            <span class="tag">PowerShell</span>
-            <span class="tag">Windows</span>
-            <span class="tag">Automation</span>
-          </div>
-        </a>
-
-        <a class="project" href="#" target="_blank" rel="noreferrer">
-          <h3>Ticketing Workflow Notes</h3>
-          <p>Documented triage steps and resolution templates to improve consistency and reduce repeat issues.</p>
-          <div class="meta">
-            <span class="tag">Help Desk</span>
-            <span class="tag">Documentation</span>
-          </div>
-        </a>
-
-        <a class="project" href="#" target="_blank" rel="noreferrer">
-          <h3>Linux Services Mini-Lab</h3>
-          <p>Configured users, permissions, SSH hardening, and basic monitoring with clear setup instructions.</p>
-          <div class="meta">
-            <span class="tag">Linux</span>
-            <span class="tag">SSH</span>
-            <span class="tag">Security</span>
-          </div>
-        </a>
-
-        <a class="project" href="#" target="_blank" rel="noreferrer">
-          <h3>Home Network Upgrade</h3>
-          <p>Designed a simple network layout and tuned Wi-Fi for stability; documented before/after results.</p>
-          <div class="meta">
-            <span class="tag">Networking</span>
-            <span class="tag">Wi-Fi</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-title">
-        <div>
-          <h2>Skills</h2>
-          <p>Keep this aligned with the jobs you’re applying for.</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="project" role="article">
-          <h3>IT Support</h3>
-          <p>Hardware/software troubleshooting, escalation, documentation, customer communication.</p>
-          <div class="meta">
-            <span class="tag">Ticketing</span>
-            <span class="tag">User Support</span>
-            <span class="tag">SLA mindset</span>
-          </div>
-        </div>
-
-        <div class="project" role="article">
-          <h3>Networking</h3>
-          <p>TCP/IP fundamentals, subnetting basics, DNS/DHCP, Wi-Fi troubleshooting, packet analysis.</p>
-          <div class="meta">
-            <span class="tag">TCP/IP</span>
-            <span class="tag">DNS</span>
-            <span class="tag">Wireshark</span>
-          </div>
-        </div>
-
-        <div class="project" role="article">
-          <h3>Systems</h3>
-          <p>Windows & Linux basics, permissions, scripting/automation for repeatable support tasks.</p>
-          <div class="meta">
-            <span class="tag">Windows</span>
-            <span class="tag">Linux</span>
-            <span class="tag">PowerShell</span>
+        <div class="card">
+          <div class="stat">
+            <div class="k">Program</div>
+            <div class="v">Cybersecurity (CYT), Seneca Polytechnic</div>
+            <div class="k">Dates</div>
+            <div class="v">Sep 2025 → Apr 2026</div>
+            <div class="k">GPA</div>
+            <div class="v">3.9</div>
+            <div class="k">Strengths</div>
+            <div class="v">Networking + monitoring + documentation</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
-      <div class="section-title">
-        <div>
-          <h2>About</h2>
-          <p>Short and practical beats long and vague.</p>
+    <section class="section" id="about">
+      <h2>About</h2>
+      <div class="split">
+        <div class="card">
+          <p class="muted" style="margin:0">
+            I’m a cybersecurity student with hands-on labs in Active Directory security, vulnerability assessment,
+            penetration testing, and cloud/IoT monitoring. I’m aiming for co-op roles where I can apply strong troubleshooting
+            skills and keep learning security operations.
+          </p>
+          <ul class="muted">
+            <li>Strong documentation and reporting (findings, impact, remediations).</li>
+            <li>Comfortable working across Windows/macOS environments.</li>
+            <li>Focused on practical security + networking fundamentals.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px; font-size:15px">Highlights</h3>
+          <ul class="muted">
+            <li>AD attack simulation (recon → exploit → lateral movement) + remediations</li>
+            <li>AWS IoT monitoring stack with Suricata + ELK + VPC Flow Logs</li>
+            <li>Pen testing report with risk rating + mitigation steps</li>
+            <li>Secure network design using ACLs, port security, DNS, HTTPS, SSH</li>
+          </ul>
         </div>
       </div>
-
-      <div class="card" style="padding:18px">
-        <p style="margin:0; color:var(--muted); line-height:1.7">
-          I’m an IT support / help desk focused professional with CompTIA A+ and Network+.
-          I like building labs, documenting steps clearly, and solving real user problems.
-          <br><br>
-          <span class="muted">Replace this paragraph with 3–5 sentences from your resume (education + experience + what you want next).</span>
-        </p>
-      </div>
     </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-title">
-        <div>
-          <h2>Contact</h2>
-          <p>Add your real links here.</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <a class="project" href="mailto:you@example.com">
-          <h3>Email</h3>
-          <p>you@example.com</p>
-          <div class="meta"><span class="tag">mailto</span></div>
-        </a>
-        <a class="project" href="#" target="_blank" rel="noreferrer">
-          <h3>LinkedIn</h3>
-          <p>linkedin.com/in/your-handle</p>
-          <div class="meta"><span class="tag">profile</span></div>
-        </a>
-        <a class="project" href="https://github.com/" target="_blank" rel="noreferrer">
-          <h3>GitHub</h3>
-          <p>github.com/your-username</p>
-          <div class="meta"><span class="tag">repos</span></div>
-        </a>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <span id="year"></span> Khang Le • Built with plain HTML/CSS • Hosted on GitHub Pages</div>
-    </footer>
-  </main>
-
-  <script>
-    // Theme toggle with localStorage
-    const root = document.documentElement;
-    const btn = document.getElementById("themeBtn");
-
-    const saved = localStorage.getItem("theme");
-    if (saved) root.setAttribute("data-theme", saved);
-
-    function label(){
-      const t = root.getAttribute("data-theme") || "dark";
-      btn.textContent = (t === "light") ? "☀️ Theme" : "🌙 Theme";
-    }
-    label();
-
-    btn.addEventListener("click", () => {
-      const t = root.getAttribute("data-theme") || "dark";
-      const next = (t === "light") ? "dark" : "light";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-      label();
-    });
-
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
