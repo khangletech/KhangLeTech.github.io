@@ -223,7 +223,7 @@
         <div>
           <!-- PHOTO AREA: Put your image at assets/profile.jpg -->
           <div class="profile">
-            <img class="avatar" src="./assets/profile.jpg" alt="Khang Le profile photo" />
+            <img class="avatar" src="./assets/photo.jpg" alt="Khang Le profile photo" />
             <div>
               <h1>Cybersecurity • Networking • IT Technician</h1>
               <p class="sub">
